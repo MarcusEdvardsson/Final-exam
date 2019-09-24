@@ -1,0 +1,99 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+img {
+	display: 100%;
+}
+
+/* Grid Template Areas */
+
+.wrapper {
+	display: grid;
+	grid-template-columns: 100%;
+	grid-template-areas:
+	"head"
+	"main"
+	"foot"
+}
+
+.head {
+	grid-area: head;
+}
+
+.main {
+	grid-area: main;
+}
+
+.foot {
+	grid-area: foot;
+}
+
+/* End of Grid Template Areas */
+
+/* Typografi */
+
+h1 {
+	font-family: 'Lobster', sans-serif;
+	font-size: 5rem;
+	font-weight: 100;
+	color: #FFF;
+}
+
+h2 {
+	font-family: 'Roboto', sans-serif;
+}
+
+p {
+	font-family: 'Roboto', sans-serif;
+}
+
+q {
+	font-family: 'Roboto', sans-serif;
+}
+
+/* End of Typografi */
+
+/* Head-section */ 
+
+.head {
+	height: 100vh;
+	background-image: url("../images/hero.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.hero-content {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 5%;
+}
+
+.app {
+	height: 2rem;
+	height: 3rem;
+}
+
+.hero-mobile {
+	display: none;
+}
+
+
+/* Media queries */
+
+@media only screen and (max-width: 768px) {
+	.nav-ul, .searchbtn {
+		display: none;
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	.hero-mobile {
+		display: inline-block;
+	}
+}

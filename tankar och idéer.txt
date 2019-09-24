@@ -1,0 +1,18 @@
+Header -
+
+Mobile version - Hamburger menu 
+Desktop version - Top navbar
+
+Hero-image bottom fade into cloud png
+
+Search-button on-click - extend search field
+
+
+<i class="fas fa-hamburger"></i>
+<img src="images/pagelines-brands.svg" alt="" class="branch">
+
+font-family: 'Lobster', cursive;
+font-family: 'Roboto', sans-serif;
+
+navbar background: #d7ced3
+top section background: #062b3e
