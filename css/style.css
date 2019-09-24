@@ -58,6 +58,91 @@ q {
 
 /* Head-section */ 
 
+/* Nav-bar */
+
+.navbar ul {
+	list-style: none;
+	overflow: hidden;
+}
+
+.menu a {
+	color: #FFF;
+	display: block;
+	padding: 1rem;
+	text-decoration: none;
+	font-family: 'Roboto', sans-serif;
+	cursor: pointer;
+}
+
+.navbar .logo {
+	float: left;
+	display: block;
+	padding: 10px;
+}
+
+.navbar .menu {
+	clear: both;
+	max-height: 0;
+	transition:max-height .2s ease-out;
+}
+
+.navbar .menu-icon {
+	padding: 2rem 2rem;
+	position: relative;
+	float: right;
+	cursor: pointer;
+}
+
+.navbar .menu-icon .nav-icon {
+	background: #333;
+	display: block;
+	height: 2px;
+	width: 1rem;
+	position: relative;
+	transition: background .2s ease-out;
+}
+
+.navbar .menu-icon .nav-icon:before,
+.navbar .menu-icon .nav-icon:after {
+	background: #333;
+	content: "";
+	display: block;
+	height: 2px;
+	width: 1rem;
+	position: absolute;
+	transition: all .2s ease-out;
+	top: 5px;
+}
+
+.navbar .menu-icon .nav-icon:after {
+	top: -5px;
+}
+
+.navbar .menu-btn {
+	display: none;
+}
+
+.navbar .menu-btn:checked ~ .menu {
+	max-height: 15rem;
+}
+
+.navbar .menu-btn:checked ~ .menu .nav-icon {
+	background: transparent;
+}
+
+.navbar .menu-btn:checked ~ .menu .nav-icon::before {
+	transform: rotate(-45deg);
+	top: 0;
+}
+
+.navbar .menu-btn:checked ~ .menu .nav-icon::after {
+	transform: rotate(45deg);
+	top: 0;
+}
+
+
+/* End of Nav-bar */
+
 .head {
 	height: 100vh;
 	background-image: url("../images/hero.jpg");
@@ -85,12 +170,6 @@ q {
 
 
 /* Media queries */
-
-@media only screen and (max-width: 768px) {
-	.nav-ul, .searchbtn {
-		display: none;
-	}
-}
 
 @media only screen and (min-width: 768px) {
 	.hero-mobile {
