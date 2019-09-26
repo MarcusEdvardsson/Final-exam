@@ -208,14 +208,14 @@ q {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: center;
 	text-align: center;
 	width: 20rem;
+	height: 25rem;
 	margin: 1rem;
 	padding: 10px;
 	border: none;
 	border-radius: 5px;
-	box-shadow: -3px 3px 15px grey;
+	box-shadow: -3px 3px 15px #FFF;;
 	background: #062b3e;
 	color: #d9cdcf;
 }
@@ -225,7 +225,8 @@ q {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	height: 100%;
+	padding-top: 3rem;
+	height: 70%;
 }
 
 .card-text h2 {
@@ -259,6 +260,56 @@ q {
 .quote-container {
 	display: flex;
 	flex-direction: column;
+	justify-content: center;
+}
+
+.containter {
+	display: flex;
+	align-items: center;
+	align-content: center;
+	flex-direction: column;
+}
+
+.box {
+	width: 23rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background: #d9cdcf;
+	margin: 1.5rem 0;
+	box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+}
+
+.box .info-bg {
+	width: 100%;
+	height: 25rem;
+	object-fit: cover;
+	-webkit-clip-path: polygon(0 0, 100% 0, 100% 78%, 0% 100%);
+	clip-path: polygon(0 0, 100% 0, 100% 78%, 0% 100%);
+}
+
+.face {
+	width: 11rem;
+	height: 12rem;
+	object-fit: cover;
+	border-radius: 50%;
+	margin-top: -8rem;
+	z-index: 1;
+	border: 10px solid #d9cdcf;
+}
+
+.box .name {
+	font-family: 'Roboto', sans-serif;
+	color: #062b3e;
+	font-size: 2rem;
+	margin: 1rem 0;
+}
+
+.box .quote {
+	text-align: center;
+	margin: 1rem;
+	font-style: italic;
 }
 
 /* End Of Main Section
