@@ -4,10 +4,6 @@
 	padding: 0;
 }
 
-img {
-	display: 100%;
-}
-
 /* Grid Template Areas */
 
 .wrapper {
@@ -43,21 +39,8 @@ h1 {
 	color: #062b3e;
 }
 
-h2 {
+h2, p, q {
 	font-family: 'Roboto', sans-serif;
-}
-
-p {
-	font-family: 'Roboto', sans-serif;
-}
-
-q {
-	font-family: 'Roboto', sans-serif;
-}
-
-.hero-paragraf {
-	color: #FFF;
-	font-size: 1rem;
 }
 
 /* End of Typografi */
@@ -88,7 +71,7 @@ q {
 .navbar .menu {
 	clear: both;
 	max-height: 0;
-	transition:max-height .2s ease-out;
+	transition:max-height .2s ease-in;
 }
 
 .navbar .menu-icon {
@@ -151,10 +134,11 @@ q {
 	align-items: center;
 }
 
-
 .hero-paragraf {
 	text-align: justify;
-	margin-top: 3rem
+	margin-top: 3rem;
+	color: #FFF;
+	font-size: 1rem;
 }
 
 .app {
@@ -379,6 +363,7 @@ input[type=submit] {
 		grid-template-columns: repeat(6, 1fr);
 		grid-auto-rows: auto;
 		grid-row-gap: 1rem;
+		padding: 0;
 	}
 
 	.hero-info {
@@ -400,6 +385,7 @@ input[type=submit] {
 
 	.hero-mobile {
 		grid-column: 5/6;
+		/* grid-row: 1/2; */
 	}
 
 	.hero-heading {
