@@ -48,70 +48,142 @@ h2, p, q {
 /* Head-section */
 /* Nav-bar */
 
-.navbar ul {
-	list-style: none;
-	overflow: hidden;
-}
+/* Kollade på en YouTube-guide för denna delen, men förstår vad allt innebär */ 
 
-.menu a {
-	color: #FFF;
-	display: block;
-	padding: 1rem;
-	text-decoration: none;
-	font-family: 'Roboto', sans-serif;
-	cursor: pointer;
-}
-
-.navbar .logo {
-	float: left;
-	display: block;
-	padding: 10px;
-	color: #062b3e;
-}
-
-.navbar .menu {
-	clear: both;
-	max-height: 0;
-	transition:max-height .2s ease-in;
-}
-
-.navbar .menu-icon {
-	padding: 2rem 2rem;
-	position: relative;
-	float: right;
-	cursor: pointer;
-}
-
-.navbar .menu-icon .nav-icon {
-	background: #333;
-	display: block;
-	height: 2px;
-	width: 1rem;
-	position: relative;
-}
-
-.navbar .menu-icon .nav-icon:before,
-.navbar .menu-icon .nav-icon:after {
-	background: #333;
-	content: "";
-	display: block;
-	height: 2px;
-	width: 1rem;
+.menu-wrap {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1;
+  }
+   
+  .menu-wrap .toggler {
 	position: absolute;
-	top: 5px;
-}
+	top: 0;
+	left: 0;
+	z-index: 2;
+	cursor: pointer;
+	width: 50px;
+	height: 50px;
+	opacity: 0;
+  }
+   
+  .menu-wrap .hamburger {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	width: 60px;
+	height: 60px;
+	padding: 1rem;
+	background: #333;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+  }
 
-.navbar .menu-icon .nav-icon:after {
-	top: -5px;
-}
+  .menu-wrap .hamburger > div {
+	position: relative;
+	flex: none;
+	width: 100%;
+	height: 2px;
+	background: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: all 0.4s ease;
+  }
 
-.navbar .menu-btn {
-	display: none;
-}
-
-.navbar .menu-btn:checked ~ .menu {
-	max-height: 15rem;
-}
+  .menu-wrap .hamburger > div::before,
+  .menu-wrap .hamburger > div::after {
+	content: '';
+	position: absolute;
+	z-index: 1;
+	top: -10px;
+	width: 100%;
+	height: 2px;
+	background: inherit;
+  }
+   
+  .menu-wrap .hamburger > div::after {
+	top: 10px;
+  }
+   
+  .menu-wrap .toggler:checked + .hamburger > div {
+	transform: rotate(135deg);
+  }
+   
+  .menu-wrap .toggler:checked + .hamburger > div:before,
+  .menu-wrap .toggler:checked + .hamburger > div:after {
+	top: 0;
+	transform: rotate(90deg);
+  }
+   
+  .menu-wrap .toggler:checked:hover + .hamburger > div {
+	transform: rotate(225deg);
+  }
+   
+  .menu-wrap .toggler:checked ~ .menu {
+	visibility: visible;
+  }
+   
+  .menu-wrap .toggler:checked ~ .menu > div {
+	transform: scale(1);
+	transition-duration: 0.75s;
+  }
+   
+  .menu-wrap .toggler:checked ~ .menu > div > div {
+	opacity: 1;
+	transition:  opacity 0.4s ease 0.4s;
+  }
+   
+  .menu-wrap .menu {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	visibility: hidden;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+  }
+   
+  .menu-wrap .menu > div {
+	background: rgba(24, 39, 51 , 0.85);
+	border-radius: 50%;
+	width: 200vw;
+	height: 200vw;
+	display: flex;
+	flex: none;
+	align-items: center;
+	justify-content: center;
+	transform: scale(0);
+	transition: all 0.4s ease;
+  }
+   
+  .menu-wrap .menu > div > div {
+	text-align: center;
+	max-width: 90vw;
+	max-height: 100vh;
+	opacity: 0;
+	transition: opacity 0.4s ease;
+  }
+   
+  .menu-wrap .menu > div > div > ul > li {
+	list-style: none;
+	color: #fff;
+	font-size: 1.5rem;
+	padding: 1rem;
+  }
+   
+  .menu-wrap .menu > div > div > ul > li > a {
+	color: #FFF;
+	font-family: 'Roboto', sans-serif;
+	text-decoration: none;
+	transition: color 0.4s ease;
+  }
 
 /* End of Nav-bar */
 /* Hero-section */
@@ -127,6 +199,7 @@ h2, p, q {
 	justify-content: center;
 	align-items: center;
 	padding: 5%;
+	margin-top: 5rem;
 }
 
 .hero-info {
